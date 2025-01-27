@@ -9,30 +9,29 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Ejercicio 1: Teletransporte objetos. (He intercambiado verticales y horizontales con sus negativos.)
         if (transform.position.y > vertical)
-        {
-            transform.position = new Vector3(transform.position.x, vertical, transform.position.z);
-        }
-
-        if (transform.position.y < -vertical)
         {
             transform.position = new Vector3(transform.position.x, -vertical, transform.position.z);
         }
-        if (transform.position.x > horizontal)
+        if (transform.position.y < -vertical)
         {
-            transform.position = new Vector3(horizontal, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, vertical, transform.position.z);
         }
-
-        if (transform.position.x < -horizontal)
+        if (transform.position.x > horizontal)
         {
             transform.position = new Vector3(-horizontal, transform.position.y, transform.position.z);
         }
 
+        if (transform.position.x < -horizontal)
+        {
+            transform.position = new Vector3(horizontal, transform.position.y, transform.position.z);
+        }
     }
 }
